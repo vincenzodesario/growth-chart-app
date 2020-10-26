@@ -27,5 +27,5 @@ jobs:
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: vdgrowthchartapp
+        app-name: vdgrowthchart
         publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
