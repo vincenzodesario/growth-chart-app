@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cardiology Risk Visualization - FHIR</title>
+    <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.0/build/fhir-client.min.js"></script>
+    <script src="launcherApp.js"></script>
+    <script>
+        GC.loadApp();
+      </script>
+  </head>
+  <body style="margin: none;">
+    <div id='errors' style='display: none; width: 600px; margin: 100px auto;'></div>
+    <div id='holder' style='display: none; height: 1200px; width: 780px;'></div>
+    <div id='log'></div>
+    <div class="container">
+        <iframe class="responsive-iframe" name ="iframe1"></iframe>
+      </div>
+  </body>
+</html>

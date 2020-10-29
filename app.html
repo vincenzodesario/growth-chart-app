@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script  type="text/javascript" src="https://codesandbox.io/public/sse-hooks/sse-hooks.js"></script>
+
+        <title>Display Conformance</title>
+        <script src="https://cdn.jsdelivr.net/npm/fhirclient@2.3.0/build/fhir-client.min.js"></script>
+    </head>
+    <body>
+        <pre id="output">Loading...</pre>
+        <script type="text/javascript">
+            function display(data) {
+                var output = document.getElementById("output");
+                output.innerText =
+                    data instanceof Error
+                        ? String(data)
+                        : JSON.stringify(data, null, 4);
+            }
+            FHIR.oauth2
+                .ready()
+                .then(function(client) {
+                    return client.request("Patient");
+                })
+                .then(display)
+                .catch(display);
+        </script>
+      <script crossorigin type="text/javascript" src="https://codesandbox.io/static/js/watermark-button.ccc763f75.js"></script>
+  </body>
+</html>
