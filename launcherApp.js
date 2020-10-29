@@ -33,5 +33,18 @@ GC.loadApp = function() {
         });
         resolve();
     }); 
-    Promise.all([loadApp1, loadApp2]);
+
+    var loadApp3 = new Promise((resolve, reject) => {
+        FHIR.oauth2.authorize({
+            iss: iis,
+            launch: launch,
+            client_id: "6687367c-9fdc-4e7f-8ba8-4906968c0641",
+            scope:  "patient/Observation.read patient/Patient.read offline_access",
+            target: "iframe3",
+            completeInTarget: true,
+            redirectUri: 'https://vdgrowthchart.azurewebsites.net/'
+        });
+        resolve();
+    }); 
+    Promise.all([loadApp1, loadApp2, loadApp3]);
 }
