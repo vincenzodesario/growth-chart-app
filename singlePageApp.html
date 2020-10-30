@@ -19,7 +19,7 @@
             scope:  "patient/Observation.read patient/Patient.read offline_access",
             target: "iframe3",
             completeInTarget: true,
-            redirectUri: 'https://vdgrowthchart.azurewebsites.net/'
+            redirectUri: 'https://vdgrowthchart.azurewebsites.net/singlePageApp.html'
       }).then(function(client) {
             return client.request("Patient");
         })
