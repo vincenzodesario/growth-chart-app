@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Growth Chart SMART Application</title>
+    <script src="node_modules/fhirclient/build/fhir-client.js"></script>
+    <script>
+    var launchContext = {};
+    launchContext.patient ='d6bcfe9a-5828-4888-bf1c-95c4a4115c41';
+    launchContext.encounter = '';
+    launchContext.practioner ='';
+    var launch = encodeURIComponent(btoa(JSON.stringify(launchContext)));
+    var iis = 'https://vdfhir.azurehealthcareapis.com';
+      FHIR.oauth2.init({
+            iss: iis,
+            launch: launch,
+            client_id: "6687367c-9fdc-4e7f-8ba8-4906968c0641",
+            scope:  "patient/Observation.read patient/Patient.read offline_access",
+            target: "iframe3",
+            completeInTarget: true,
+            redirectUri: 'https://vdgrowthchart.azurewebsites.net/'
+      }).then(function(client) {
+            return client.request("Patient");
+        })
+        .then(display)
+        .catch(display);
+      function display(data) {
+                var output = document.getElementById("output");
+                output.innerText =
+                    data instanceof Error
+                        ? String(data)
+                        : JSON.stringify(data, null, 4);
+    };
+    
+    </script>
+  </head>
+  <body>Loading...</body>
+</html>
