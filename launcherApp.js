@@ -2,7 +2,7 @@ window.GC = window.GC || {};
 
 GC.loadApp = function() {
     var launchContext = {};
-    launchContext.patient ='d6bcfe9a-5828-4888-bf1c-95c4a4115c41';
+    launchContext.patient ='7da30dbb-c9cc-4707-a3a1-0cd191c49195';
     launchContext.encounter = '';
     launchContext.practioner ='';
     var launch = encodeURIComponent(btoa(JSON.stringify(launchContext)));
