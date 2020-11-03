@@ -16,7 +16,8 @@
             iss: iis,
             launch: launch,
             client_id: "6687367c-9fdc-4e7f-8ba8-4906968c0641",
-            scope:  "patient/Observation.read patient/Patient.read offline_access"
+            scope:  "patient/Observation.read patient/Patient.read offline_access",
+            redirect_uri: 'https://vdgrowthchart.azurewebsites.net/singlePageApp.html'
       }).then(function(client) {
             return client.request("Patient");
         })
