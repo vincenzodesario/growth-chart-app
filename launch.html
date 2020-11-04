@@ -6,10 +6,13 @@
     <title>Growth Chart SMART Application</title>
     <script src="node_modules/fhirclient/build/fhir-client.js"></script>
     <script>
-      FHIR.oauth2.authorize({
+      setTimeout(() => {  
+        FHIR.oauth2.authorize({
         "client_id": "6687367c-9fdc-4e7f-8ba8-4906968c0641",
         "scope":  "patient/Observation.read patient/Patient.read offline_access",
       });
+        }, 10000);
+     
     </script>
   </head>
   <body>Loading...</body>
